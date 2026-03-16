@@ -1,0 +1,146 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* ===== A4 PRINT STYLES ===== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm 12mm 10mm;
+  }
+  /* Reset page background and spacing */
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+  }
+  /* Force table to fit A4 width */
+  table {
+    min-width: 0 !important;
+    width: 100% !important;
+    font-size: 9px !important;
+    table-layout: auto !important;
+  }
+  /* Compact table cells for print */
+  th, td {
+    padding: 3px 5px !important;
+    white-space: nowrap;
+  }
+  /* Allow product description to wrap */
+  td:nth-child(2) {
+    white-space: normal !important;
+    word-break: break-word;
+  }
+  /* Remove shadows and rings */
+  .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+    box-shadow: none !important;
+  }
+  .ring-1, .ring-2 {
+    box-shadow: none !important;
+  }
+  /* Remove overflow scroll - let content flow */
+  .overflow-x-auto {
+    overflow: visible !important;
+  }
+  /* Remove rounded corners for cleaner print */
+  .sm\:rounded-lg, .rounded-lg, .rounded-md {
+    border-radius: 0 !important;
+  }
+  /* Ensure header backgrounds print correctly */
+  thead th {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* Category header rows */
+  tr.bg-\[\#D9E6F2\] td,
+  tr[class*="bg-[#D9E6F2]"] td {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* Page break handling */
+  thead {
+    display: table-header-group;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  /* Keep category header with its items */
+  .group\/cat {
+    page-break-after: avoid;
+  }
+  /* Footer section - avoid break inside */
+  .border-t-2 {
+    page-break-inside: avoid;
+  }
+  /* Compact header for print */
+  .border-b-4 {
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  /* Reduce spacing between sections */
+  .my-6 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .mt-8 {
+    margin-top: 12px !important;
+  }
+  .mb-3 {
+    margin-bottom: 4px !important;
+  }
+  /* Compact section titles for print */
+  .text-lg {
+    font-size: 12px !important;
+  }
+  /* Company name sizing */
+  .text-2xl {
+    font-size: 16px !important;
+  }
+  .text-3xl {
+    font-size: 18px !important;
+  }
+  /* Title box */
+  .text-xl {
+    font-size: 14px !important;
+  }
+  /* Logo size for print */
+  .h-16.w-16 {
+    height: 40px !important;
+    width: 40px !important;
+  }
+  .h-16 {
+    height: 40px !important;
+  }
+  .w-16 {
+    width: 40px !important;
+  }
+  /* Footer compact */
+  .pt-6 {
+    padding-top: 8px !important;
+  }
+  .gap-6 {
+    gap: 10px !important;
+  }
+  /* Terms box */
+  .p-4 {
+    padding: 8px !important;
+  }
+  /* Generated on footer */
+  .text-xs {
+    font-size: 7px !important;
+  }
+  /* Availability badges in view mode */
+  .rounded-full {
+    font-size: 7px !important;
+    padding: 1px 4px !important;
+  }
+}
